@@ -1,0 +1,39 @@
+.box-set {
+    background: #e8eae9;
+    /*overflow: auto;*/
+}
+.box {
+    background: #8ec63f;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    width: 200px;
+}
+.box-set:before,
+.box-set:after{
+    content: "";
+    display: table;
+}
+.box-set:after{
+    clear: both;
+}
+.box-set{
+    *zoom:1;
+}
+/*
+    定义一个类名
+    .group:before,
+    .group:after{
+        content:"";
+        display:table;
+    }
+    .group:after{
+        clear：both;
+    }
+    .group{
+       *zoom:1;
+    }
+
+    只需要把这个插入的到有浮动元素的父元素上给个类名字就行了。
+
+*/

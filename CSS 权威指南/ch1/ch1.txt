@@ -1,0 +1,18 @@
+1.块元素
+    替换元素通常不是， <div> <p>
+2.行内元素
+    strong em
+  块元素不能继承自行内元素（不能嵌套在行内元素）
+
+3.display block inline
+  块内元素里面放行内元素，可以通过属性调转（相当于改变了显示的角色，但是html还是块元素包含行元素），但是一开始写的时候不能把行写在块外面。
+4.候选样式表
+  ie不支持
+5.import
+  @import url(sheet2.css);但是需要对位置有要求
+   <style type ="text/css">@import url(sheet2.css);
+        h1{
+            color:gray;
+        }
+   </style>
+

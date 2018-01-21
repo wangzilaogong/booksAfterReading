@@ -1,0 +1,27 @@
+基本视觉格式化
+    基本的盒子模型
+    正常流：从左到右，从上到下。
+  水平格式化
+    水平属性margin-left,border-left,padding-left,width,padding-right,border-right,margin-right.
+    其中width和左右外边距可以设置成auto，其余的值默认为0或者给定一个值
+    当width 和margin 的设置不满足整体长度的时候，我们会规定强制把margin-right:auto;
+    p{margin-left:100px; margin-right:100px;//right margin forced to be 200px;
+        width:100px;
+    }
+    三个auto元素中，如果2个设置成了auto，那么就这2个元素相等。
+    3auto ,2个外边距都是为0，width默认为auto
+    由于父元素的内边距以及边距，所以可以带来对子元素造成隐式的偏移
+    尽量别混用百分比和具体数字
+
+  替换元素
+    改变了一个宽度也会改变一个高度，成比例的进行变化
+
+  垂直格式化
+    和水平格式化的3个auto相似
+
+
+
+
+
+
+

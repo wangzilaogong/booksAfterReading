@@ -1,0 +1,46 @@
+数字
+    CSS里面有整数+小数
+百分数
+
+颜色
+    16进制的
+
+命名颜色
+    h1{ color :maroon;}
+
+函数式表达
+    rgb(100%,100%，100%) 0~255
+
+绝对长度
+    固定的长度
+
+相对长度
+    em:font-size是14个像素。1em就是14个像素，定义字体的font-size值，成比例的对外边距和字体大小使用em作为长度的单位
+    ex:1ex=0.5em
+
+URL
+    url(pathname)
+    @import url(http://www.waffles.org/toppings/special/toppings.css);
+
+关键字
+    a:link
+    a:visited{text-docoration:none;}
+
+inherit
+    使得一个属性和他的父元素的值相同，继承。不过大多数情况下都是默认的
+    #toolbar{background:blue;color:white;}
+    <div id="toolbar">
+        <a href="one.html">One</a> | <a href ="two.html">Two</a>| <a href ="three.html">three</a>
+    </div>
+    继承是根据父元素的首选样式来的，所以a标签是蓝色的，如果想要变成白色 a{color:inherit;}就可以了
+
+CSS2单位
+    角度值
+        度deg
+        梯度grad
+        弧度rad  0-360
+    时间值
+        100ms 0.1s
+    频率值
+        10MHz 和10Mhz是一样的不区分大小写
+

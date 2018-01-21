@@ -1,0 +1,34 @@
+本章 文本属性
+  文本缩进
+     text-indent 应用于块级元素
+     p{text-indent:3em;}
+     无法行内元素且替换元素也不行
+     p{text-indent:-4em}负缩进
+  浮动图像和负文本的缩进
+     这个属性可继承
+        <div>
+            <p></p>
+        </div>
+        div {text-indent:10%;}
+        p也会进行缩进
+
+  水平对齐
+     text-align 针对内容的，不会影响整个元素
+        left center right justify inherit
+        justify 两端水平对齐
+
+  垂直对齐
+     line-height
+     行内每个元素都会生成一个行内框，如果不存在其他因素，行内框等于内容框
+     P142页图很清楚
+    行高和继承
+     p143 父元素{line-height:1;}缩放因子，应用到子元素的时候就无需考虑具体数值。
+     垂直文本对齐
+        vertical-align 行内元素和表单元素
+
+  基线对齐
+     vertical-align:baseline;
+     vertical-align:sub/super;
+     vertical-align:bottom;
+
+  //149~

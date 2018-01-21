@@ -1,0 +1,65 @@
+﻿
+CH2:选择器
+
+font 字体可以用斜线来分割2个特定的关键字
+h2{
+	font : large/150% san-serif;
+}
+
+
+e.class{
+	//e元素且class名： change style
+}
+
+
+//属性选择器
+h1 [class] {color:silver;}
+
+p[class~="warning"]{font-weight :bold;} 选择class里包含warning的
+
+~可以用于其他的属性，如title
+以上都是完全匹配
+子串匹配
+span[class^="bar"] 以bar开头的
+span[class$="bar"] 以bar结尾的
+span[class*="bar"] 包含bar的字符串
+（可能浏览器不支持，具体请实际测试）
+*[lang|="en"]会选择lang=en或是以en开头的所有元素
+
+
+
+//XML
+planet [moon] {font-weight:bold;}
+<planet>Venus</planet>
+<planet moon="1">Earth</planet>
+<planet moon="2">Mars</planet>
+
+//web
+在web中我们可以用
+img [alt] {border:3px solid red}
+类似的用法来突出某个属性的某元素的特色
+a[href][title] {font-weight: bold;}针对有href和title的属性的a标签设置为粗体
+
+伪类和伪元素
+a:linked
+a:visited
+a:focus
+a:hover
+a:active
+结合伪类
+a:link:hover{}
+a:visited:hover{}
+伪元素选择器
+    :first-letter
+    :first-line
+    CSS2中规定了只能用于这2伪元素只能用于标记或是段落的块元素，不能用于超链接的行内元素；CSS2.1中first-letter可以用到所有元素
+   p:first-letter{color:red;}
+   h2:first-letter{font-size:200%;}
+   这是假想的，用户代理去完成的无需我们手动的在p元素上添加:first-letter这个属性
+   属性也有限制详情见p66页
+
+ 设置元素之前和之后的样式
+    h2:before{ content:"}}";color:silver;}
+    在h2之前加上了}}
+    body:after{content: " The End.";}
+

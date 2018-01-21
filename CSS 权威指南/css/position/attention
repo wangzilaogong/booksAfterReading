@@ -1,0 +1,8 @@
+绝对定位的时候
+    1父元素和祖先元素中至少有一个relative&absolute
+        那么我们子元素加上absolute的时候，子元素的定位范围是父元素
+    2父元素和祖先元素没有relative&absolute
+        那么我们子元素加上absolute的时候，子元素的定位范围是页面
+
+fixed定位
+    ie6需要去hack
