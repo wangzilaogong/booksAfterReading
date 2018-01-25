@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型模式</title>
+</head>
+<body>
+    
+    <script>
+    var Plan  = function(){
+        this.blood = 100;
+        this.attacklevel = 1;
+        this.defenselevel = 1;
+    }
+    var plane = new Plan();
+    plane.blood = 1000;
+    plane.attacklevel = 10;
+    plane.defenselevel = 10;
+    console.log(plane);
+    //object.create()
+    var clonePlane = Object.create(plane);
+    console.log(plane);
+    console.log(Plan)//constructor
+
+    //不支持object.create 
+    Object.create = Object.create || function (obj) {
+        var F = function () {
+            F.prototype = obj;
+        }
+        return new F();
+    }
+    </script>
+</body>
+</html>
