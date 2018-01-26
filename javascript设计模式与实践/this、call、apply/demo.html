@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this、call、apply</title>
+</head>
+<body>
+    <script>   
+    // 对象的方法
+    var obj = {
+    a:1,
+    getA :function(){
+        alert(this === obj);    //true
+        alert(this.a);          // 1
+    }
+}
+obj.getA();
+//普通函数 没有特指什么的是，一般总是指向全局对象window对象
+window.name = 'globalName';
+var getName = function(){
+    return this.name;
+}
+console.log(getName());
+
+// !!!
+var myObject = {
+    name :'seven',
+    getName:function(){
+        return this.name ;
+    }
+}
+var getName = myObject.getName;
+console.log(myObject.getName()); //seven
+console.log(getName()); // globalName
+
+//构造起调用
+    </script>
+</body>
+</html>
