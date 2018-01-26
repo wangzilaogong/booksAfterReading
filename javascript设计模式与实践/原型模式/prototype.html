@@ -31,6 +31,70 @@
         }
         return new F();
     }
+    /***
+    new 运算符
+    */
+    function Person(name){
+        this.name = name;
+    }
+    Person.prototype.getName = function(){
+        return this.name;
+    }
+
+    var objFactory = function(){
+        var obj = new Object()
+        Constructor = [].shift.call(arguments);
+    console.log(Constructor);
+        
+        obj.__proto__ = Constructor.prototype;
+        var  ret = Constructor.apply(obj,arguments);
+        console.log(ret);
+
+        return typeof ret ==='object'?ret:obj;
+    }
+
+    var a  = objFactory(Person , 'seven');
+    var b  = new Person('seven');
+    console.log(a.name);
+    console.log(a.getName());
+    console.log(Object.getPrototypeOf(a) === Person.prototype);
+
+    /**
+    模拟类
+    */
+    var A = function(){};
+    A.prototype = {'name':'seven'};
+
+    var B = function(){};
+    B.prototype = new A();
+
+    var b = new B();
+    console.log(b.name)
+    console.log(b.address)//undefined
+
+    /**
+    ES6 Class
+    */
+    class Animal(){
+        constructor(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+    }
+
+    class Dog extends Animal{
+        constructor(name){
+            super(name);
+        }
+        speak(){
+            return "wolf"
+        }
+    }
+    var dog = new Dog("Scamp");
+    console.log(dog.getName()+'says'+dog.speak());
+
     </script>
 </body>
 </html>
