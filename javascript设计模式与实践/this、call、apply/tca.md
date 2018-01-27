@@ -10,7 +10,7 @@ var obj = {
 }
 obj.getA();
 ```
-2. 作为普通的函数里调用->window
+2. this作为普通的函数里调用->window
 ```javascript
 window.name = 'globalName';
 var getName = function(){
@@ -30,6 +30,22 @@ console.log(myObject.getName()); //seven
 console.log(getName()); // globalName
 
 ```
+3. this作为构造器调用->obj or 返回的obj
+```javascript
+    var myClass = function(){
+        this.name = 'seven';
+    }
+    var obj = new myClass();
+    alert(obj.name);//seven
 
+    var myClass2 = new function(){//显式返回一个对象
+        this.name = 'seven';
+        return {
+            name :'anne'
+        }
+    }
+    var obj = new myClass();
+    alert(obj.name)//anne
+```
 
 
