@@ -44,8 +44,36 @@ console.log(getName()); // globalName
             name :'anne'
         }
     }
-    var obj = new myClass();
+    var obj = new myClass2();
     alert(obj.name)//anne
 ```
+4. Function.prototype.call 或 Function.prototype.apply 动态调用
+```javascript
+    var obj1 = {
+        name :'seven',
+        getName :function(){
+            return this.name;
+        }
+    }
+     var obj2 = {
+        name :'anne',
+    }
+    console.log(obj1.getName()); //seven
+    console.log(obj1.getName.call(obj2)); //anne
+```
+# 丢失的this
+```javascript
+    var obj = {
+        myName : 'seven',
+        getName :function(){
+            return this.name;
+        }
+    };
+    console.log(ovj.getName());//seven
+    var getName2 = obj.getName;
+    console.log(getName2()) //undefined 这边的调用是普通函数。window对象
+```
+
+
 
 
