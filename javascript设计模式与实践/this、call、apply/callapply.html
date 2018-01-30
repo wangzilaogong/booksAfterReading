@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>call&apply</title>
+</head>
+<body>
+
+<script>
+//     var func  = function(a,b,c){
+//     console.log([a,b,c])
+//     console.log(this)
+    
+// }
+// func(1,2,3)
+
+// Function.prototype.bind = function(context){
+//         var self = this;
+//         console.log(self); //function
+//         return function(){
+//             return self.apply(context,arguments);
+//         }
+//     };
+//     var obj = {
+//         name:'sven'
+//     }
+//     var funcs = function(){
+//         alert(this.name);
+//     }.bind(obj);
+    
+//     funcs();
+
+//     Function.prototype.bind = function(){
+//         var self = this;
+//         context = [].shift.call(arguments);
+//         args = [].slice.call(arguments);
+//         return function(){
+//             return self.apply(context,[].concat.call(args,[].slice.call(arguments)))
+//         }
+//     }
+
+//     var obj2 ={
+//         name:'wk'
+//     }
+
+//     var func2 = function(){
+//         alert(this.name);
+//         alert([a,b,c,d]);
+//     }.bind(obj2,1,2);
+
+//     func2(3,4);
+    var A = function(name){
+        this.name = name;
+        console.log(this);
+    }
+    var B = function(){
+        A.apply(this,arguments);
+        console.log(this)
+    }
+    B.prototype.getName = function(){
+        return this.name;
+    }
+    var b = new B('sl');
+    // console.log(b.getName());
+</script>
+    
+</body>
+</html>
