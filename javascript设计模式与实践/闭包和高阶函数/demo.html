@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>闭包 命令模式</title>
+    <title>闭包 命令模式 节流函数</title>
 </head>
 <body>
     <button id="execute">点击我执行命令</button>
@@ -38,6 +38,28 @@
             }
         }
         setCommand( new OpenTvCommand(Tv));
+        //节流函数
+        var throttle = function(fn , interval){
+            var _self = fn,timer,firstTime = true;
+            return function(){
+                var args = arguments;
+                var _me = this;
+                if (firstTime) {
+                    _self.apply(_me,args)
+                }
+                if(timer){
+                    return false;
+                }
+                timer = setTimeout(function(){
+                    clearTimeout(timer);
+                    timer =null;
+                    _self.apply(_me,args)
+                },interval||500)
+            }
+        }
+        window.onresize =throttle(function(){
+            console.log("ssss")
+        },500)
     </script>
 </body>
 </html>
