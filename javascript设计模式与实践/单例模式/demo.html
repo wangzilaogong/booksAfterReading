@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //不太透明
+        var Singleton = function(name){
+            this.name = name ;
+            this.instance = null;
+            console.log(this);
+        }
+        Singleton.prototype.getName = function() {
+            alert(this.name)
+        }
+        Singleton.getInstance = function(name) {
+            if(!this.instance){
+                this.instance = new Singleton(name);
+            }
+            return this.instance;
+        }
+        var a = Singleton.getInstance('seven1'); // 使用方法不太透明
+        console.log(a);
+        var b =  Singleton.getInstance("seven2");
+        console.log(b);
+        alert(a == b)
+
+        // 透明
+
+        var CreateDiv = (function(){
+            var instance;
+            var CreateDiv = function (html){
+                if(instance){
+                    return instance ;
+                }
+                this.html = html ;
+                this.init();
+                console.log(this)
+                return this;
+            };
+            CreateDiv.prototype.init = function(){
+                var div = document.createElement('div');
+                div.innerHTML = this.html;
+                document.body.appendChild(div);
+            }
+        })
+    </script>
+</body>
+</html>
